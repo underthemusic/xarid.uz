@@ -1,0 +1,525 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --line: #e7e8eb;
+    --media: #f3f4f6;
+    --text: #121316;
+    --muted: #7a7d85;
+    --gold: #b8862b;
+    --promo-bg: #f6edd9;
+    --promo-text: #3a3020;
+    --radius: 18px;
+}
+
+body {
+    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+/* ---------- Header ---------- */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.92);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+}
+
+.topbar__inner {
+    max-width: 1120px;
+    height: 68px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.logo__mark {
+    display: block;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.25s;
+}
+
+.logo:hover .logo__mark {
+    transform: scale(1.05);
+}
+
+.logo__mark svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.logo__handle {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+}
+
+.logo__bag {
+    fill: #fff;
+}
+
+.logo__x {
+    fill: none;
+    stroke: #f5bf5c;
+    stroke-width: 3.2;
+    stroke-linecap: round;
+}
+
+.logo__text {
+    font-family: "Inter", "Manrope", system-ui, sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #0a0a0a;
+}
+
+.logo__text span {
+    color: #c9a45c;
+}
+
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 16px;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.home-btn svg,
+.crumbs__back svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.home-btn:hover {
+    border-color: #16a99e;
+    color: #16a99e;
+    background: #effaf8;
+}
+
+/* ---------- Breadcrumbs ---------- */
+.crumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.crumbs__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.crumbs__back svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s;
+}
+
+.crumbs__back:hover {
+    color: #16a99e;
+}
+
+.crumbs__back:hover svg {
+    transform: translateX(-3px);
+}
+
+.crumbs__sep {
+    color: #c4c6cc;
+}
+
+/* ---------- Section ---------- */
+.section {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 16px 64px;
+}
+
+.section__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.section__title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.section__sub {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.section__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.section__link svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s;
+}
+
+.section__link:hover {
+    color: var(--gold);
+}
+
+.section__link:hover svg {
+    transform: translateX(3px);
+}
+
+/* ---------- Grid ---------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* ---------- Card ---------- */
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px;
+    transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow: 0 14px 34px rgba(18, 19, 22, 0.08);
+}
+
+.card__media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    background: var(--media);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card__media img {
+    display: block;
+    height: 86%;
+    width: auto;
+    max-width: 90%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    /* oq fonni kulrang fon bilan birlashtiradi */
+    transition: transform 0.35s ease;
+}
+
+.card:hover .card__media img {
+    transform: scale(1.05);
+}
+
+/* Kiyimlar: haqiqiy fotosuratlar kartani to'liq to'ldiradi */
+.grid--fashion .card__media {
+    aspect-ratio: 3 / 4;
+    background: #eceff1;
+}
+
+.grid--fashion .card__media img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    mix-blend-mode: normal;
+}
+
+.grid--fashion .card__media--contain img {
+    object-fit: contain;
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 14px 4px 4px;
+}
+
+.card__cat {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.card__title {
+    margin-top: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
+    min-height: calc(1.35em * 2);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card__rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.card__rating .star {
+    color: var(--gold);
+    font-size: 13px;
+    line-height: 1;
+}
+
+.card__rating b {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.card__price {
+    margin-top: 14px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+.card__price small {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-left: 2px;
+}
+
+.card__promo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--promo-bg);
+    color: var(--promo-text);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card__promo svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.card__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: auto;
+    height: 44px;
+    border: 1.5px solid var(--text);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* tugma va promo orasida minimal masofa */
+.card__body>.card__promo {
+    margin-bottom: 12px;
+}
+
+.card__btn svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.card__btn:hover {
+    background: var(--text);
+    color: #fff;
+}
+
+.card__btn:active {
+    transform: scale(0.98);
+}
+
+.card__btn:focus-visible,
+.section__link:focus-visible,
+.logo:focus-visible,
+.home-btn:focus-visible,
+.crumbs__back:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .section {
+        padding-top: 20px;
+    }
+
+    .topbar__inner {
+        height: 60px;
+    }
+
+    .logo__mark {
+        width: 36px;
+        height: 36px;
+    }
+
+    .logo__text {
+        font-size: 21px;
+    }
+
+    .home-btn {
+        width: 40px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .home-btn span {
+        display: none;
+    }
+
+    .section__title {
+        font-size: 22px;
+    }
+
+    .card__price {
+        font-size: 18px;
+    }
+
+    .card__promo {
+        align-items: flex-start;
+        font-size: 11px;
+        line-height: 1.35;
+        padding: 7px 9px;
+        gap: 6px;
+        white-space: normal;
+        min-height: calc(1.35em * 2 + 14px);
+    }
+}
+
+@media (max-width: 400px) {
+    .section__sub {
+        display: none;
+    }
+
+    .card {
+        padding: 8px;
+    }
+
+    .card__title {
+        font-size: 14px;
+    }
+
+    .card__price {
+        font-size: 16px;
+    }
+
+    .card__promo svg {
+        display: none;
+    }
+}

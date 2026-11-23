@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Do‘kon ochish — Xarid.uz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dokon.css">
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#18d9c2" />
+        <stop offset="1" stop-color="#0a6fa8" />
+      </linearGradient>
+      <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ffe08a" />
+        <stop offset="1" stop-color="#f0a92e" />
+      </linearGradient>
+      <symbol id="lg" viewBox="0 0 48 48">
+        <rect width="48" height="48" rx="14" fill="url(#a)" />
+        <path d="M17 19v-3a7 7 0 0 1 14 0v3" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none" />
+        <path d="M12.5 19h23l-1.8 17.2a3.5 3.5 0 0 1-3.5 3.1H17.8a3.5 3.5 0 0 1-3.5-3.1z" fill="#fff" />
+        <path d="M19.5 24.5l9 10M28.5 24.5l-9 10" stroke="url(#b)" stroke-width="3.6" stroke-linecap="round" />
+      </symbol>
+      <symbol id="ar" viewBox="0 0 24 24">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="ck" viewBox="0 0 24 24">
+        <path d="M5 12.5l4.5 4.5L19 7.5" />
+      </symbol>
+      <symbol id="st" viewBox="0 0 24 24">
+        <path d="M3 9l2-5h14l2 5" />
+        <path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0" />
+        <path d="M5 12v8h14v-8M10 20v-5h4v5" />
+      </symbol>
+      <symbol id="bl" viewBox="0 0 24 24">
+        <path d="M13 2L4 14h7l-1 8 9-12h-7z" />
+      </symbol>
+      <symbol id="bx" viewBox="0 0 24 24">
+        <path d="M3 7l9-4 9 4-9 4-9-4z" />
+        <path d="M3 7v10l9 4 9-4V7M12 11v10" />
+      </symbol>
+      <symbol id="ch" viewBox="0 0 24 24">
+        <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+      </symbol>
+      <symbol id="sd" viewBox="0 0 24 24">
+        <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />
+        <path d="M8.5 12l2.5 2.5L16 9.5" />
+      </symbol>
+      <symbol id="tr" viewBox="0 0 24 24">
+        <path d="M2 6h12v10H2z" />
+        <path d="M14 10h4l3 3v3h-7" />
+        <circle cx="6.5" cy="17" r="1.8" />
+        <circle cx="17" cy="17" r="1.8" />
+      </symbol>
+      <symbol id="bn" viewBox="0 0 24 24">
+        <rect x="2.5" y="6" width="19" height="12" rx="2.5" />
+        <circle cx="12" cy="12" r="2.8" />
+        <path d="M6 9.5v.01M18 14.5v.01" />
+      </symbol>
+      <symbol id="cd" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="3" />
+        <path d="M3 10h18M7 15h4" />
+      </symbol>
+      <symbol id="u" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" />
+      </symbol>
+      <symbol id="ph" viewBox="0 0 24 24">
+        <rect x="7" y="2" width="10" height="20" rx="2.5" />
+        <path d="M11 18h2" />
+      </symbol>
+      <symbol id="lk" viewBox="0 0 24 24">
+        <path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1" />
+        <path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" />
+      </symbol>
+      <symbol id="gr" viewBox="0 0 24 24">
+        <rect x="4" y="4" width="7" height="7" rx="2" />
+        <rect x="13" y="4" width="7" height="7" rx="2" />
+        <rect x="4" y="13" width="7" height="7" rx="2" />
+        <rect x="13" y="13" width="7" height="7" rx="2" />
+      </symbol>
+      <symbol id="lp" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="12" rx="1.5" />
+        <path d="M2 19h20l-1.5-3h-17z" />
+      </symbol>
+      <symbol id="hp" viewBox="0 0 24 24">
+        <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+        <rect x="2.5" y="12" width="4.5" height="7" rx="2" />
+        <rect x="17" y="12" width="4.5" height="7" rx="2" />
+      </symbol>
+      <symbol id="bg" viewBox="0 0 24 24">
+        <path d="M8 8V6a4 4 0 0 1 8 0v2" />
+        <rect x="4" y="8" width="16" height="12" rx="2.5" />
+      </symbol>
+      <symbol id="sh" viewBox="0 0 24 24">
+        <path d="M8 3L3 6l2.5 4L8 9v12h8V9l2.5 1L21 6l-5-3a4 4 0 0 1-8 0z" />
+      </symbol>
+      <symbol id="so" viewBox="0 0 24 24">
+        <path d="M5 11V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3" />
+        <path d="M3 12a2 2 0 0 1 4 0v3h10v-3a2 2 0 0 1 4 0v6H3z" />
+        <path d="M6 18v2M18 18v2" />
+      </symbol>
+      <symbol id="sp" viewBox="0 0 24 24">
+        <path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" />
+      </symbol>
+      <symbol id="ty" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M8 14c1 2 2.5 3 4 3s3-1 4-3" />
+        <path d="M9 10h.01M15 10h.01" />
+      </symbol>
+      <symbol id="ba" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3v18M3 12h18M5.5 5.5c3 3 3 10 0 13M18.5 5.5c-3 3-3 10 0 13" />
+      </symbol>
+      <symbol id="ca" viewBox="0 0 24 24">
+        <path d="M4 16v-4l2-5h12l2 5v4z" />
+        <circle cx="8" cy="17" r="1.6" />
+        <circle cx="16" cy="17" r="1.6" />
+        <path d="M4 12h16" />
+      </symbol>
+      <symbol id="bk" viewBox="0 0 24 24">
+        <path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z" />
+        <path d="M5 17a3 3 0 0 1 3-3h10" />
+      </symbol>
+      <symbol id="al" viewBox="0 0 24 24">
+        <path d="M19 12H5M11 6l-6 6 6 6" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="hd">
+    <div class="w">
+      <a class="logo" href="index.html"><svg>
+          <use href="#lg" />
+        </svg><span>Xarid<i>.uz</i></span></a>
+      <nav class="nav">
+        <a href="#afzallik">Afzalliklar</a>
+        <a href="#qadamlar">Qanday ochiladi</a>
+        <a href="#mikroqarz">Mikroqarz</a>
+        <a href="#faq">Savollar</a>
+      </nav>
+      <div class="act">
+        <a class="btn o sm hide" href="login.html">Kirish</a>
+        <a class="btn sm" href="#forma">Do‘kon ochish</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+
+    <section class="hero">
+      <div class="w">
+        <div class="hl">
+          <span class="tag"><i></i>Sotuvchilar uchun</span>
+          <h1>O‘z <em>online do‘koningizni</em> Xarid.uz’da oching</h1>
+          <p class="lead">Mahsulotlaringizni joylang, buyurtma oling va savdoingizni o‘stiring. Hammasi bitta joyda.</p>
+          <div class="acts">
+            <a class="btn lg sh" href="#forma">Do‘kon ochish <svg class="i">
+                <use href="#ar" />
+              </svg></a>
+            <a class="btn o lg" href="#qadamlar">Qanday ishlaydi</a>
+          </div>
+          <ul class="pills">
+            <li><svg class="i">
+                <use href="#bl" />
+              </svg>Bir necha daqiqada</li>
+            <li><svg class="i">
+                <use href="#bn" />
+              </svg>Mikroqarz 5–20 mln</li>
+            <li><svg class="i">
+                <use href="#bx" />
+              </svg>Buyurtmalar bir joyda</li>
+          </ul>
+        </div>
+
+        <div class="stage" aria-hidden="true">
+          <div class="mock">
+            <div class="mk-bar"><i></i><i></i><i></i><span class="url">xarid.uz/<b>sizning-dokon</b></span></div>
+            <div class="mk-body">
+              <div class="mk-shop">
+                <div class="av"><svg class="i">
+                    <use href="#st" />
+                  </svg></div>
+                <div><strong>Sizning do‘koningiz</strong><small>★ 4.9 · Toshkent</small></div>
+                <span class="live"><i></i>Onlayn</span>
+              </div>
+              <div class="mk-grid">
+                <div class="mk-t">
+                  <div class="th t1"><svg class="i">
+                      <use href="#ph" />
+                    </svg></div><span class="sk w70"></span><span class="sk g w40"></span>
+                </div>
+                <div class="mk-t">
+                  <div class="th t2"><svg class="i">
+                      <use href="#bg" />
+                    </svg></div><span class="sk w60"></span><span class="sk g w50"></span>
+                </div>
+                <div class="mk-t">
+                  <div class="th t3"><svg class="i">
+                      <use href="#hp" />
+                    </svg></div><span class="sk w80"></span><span class="sk g w40"></span>
+                </div>
+                <div class="mk-t">
+                  <div class="th t4"><svg class="i">
+                      <use href="#sh" />
+                    </svg></div><span class="sk w50"></span><span class="sk g w30"></span>
+                </div>
+              </div>
+            </div>
+            <div class="fl f1"><span class="ic c1"><svg class="i">
+                  <use href="#bx" />
+                </svg></span>
+              <div><b>+12</b><small>yangi buyurtma</small></div>
+            </div>
+            <div class="fl f2"><span class="ic c2"><svg class="i">
+                  <use href="#ch" />
+                </svg></span>
+              <div><b>+24%</b><small>bugungi savdo</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="afzallik">
+      <div class="w">
+        <div class="sh">
+          <h2>Nima uchun Xarid.uz’da sotish kerak?</h2>
+          <p>Do‘kon ochish va savdoni boshqarish uchun kerakli hamma narsa.</p>
+        </div>
+        <div class="bgrid">
+          <article class="bc"><span class="bi t"><svg class="i">
+                <use href="#bl" />
+              </svg></span>
+            <h3>Tez boshlash</h3>
+            <p>Ro‘yxatdan o‘ting va do‘koningizni bir necha daqiqada yarating.</p>
+          </article>
+          <article class="bc"><span class="bi g"><svg class="i">
+                <use href="#bx" />
+              </svg></span>
+            <h3>Buyurtmalar bir joyda</h3>
+            <p>Barcha buyurtmalarni bitta paneldan kuzating va boshqaring.</p>
+          </article>
+          <article class="bc"><span class="bi c"><svg class="i">
+                <use href="#ch" />
+              </svg></span>
+            <h3>Savdo statistikasi</h3>
+            <p>Sotuvlar, to‘lovlar va mashhur mahsulotlar bo‘yicha ma’lumotlar.</p>
+          </article>
+          <article class="bc"><span class="bi t"><svg class="i">
+                <use href="#cd" />
+              </svg></span>
+            <h3>Qulay to‘lov</h3>
+            <p>Xaridorlar Click, Payme, Uzum yoki XARID.UZ kartasi bilan to‘laydi.</p>
+          </article>
+          <article class="bc"><span class="bi g"><svg class="i">
+                <use href="#tr" />
+              </svg></span>
+            <h3>Yetkazib berish</h3>
+            <p>Toshkentda 2 soat, viloyatlarga 2–4 kun ichida yetkaziladi.</p>
+          </article>
+          <article class="bc"><span class="bi k"><svg class="i">
+                <use href="#bn" />
+              </svg></span>
+            <h3>Mikroqarz imkoniyati</h3>
+            <p>Biznesingizni kengaytirish uchun 5 mln dan 20 mln so‘mgacha.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="w">
+        <div class="sh">
+          <h2>Nimalarni sotish mumkin?</h2>
+          <p>Xarid.uz’dagi mashhur kategoriyalardan birini tanlang.</p>
+        </div>
+        <ul class="chips">
+          <li><svg class="i">
+              <use href="#ph" />
+            </svg>Elektronika</li>
+          <li><svg class="i">
+              <use href="#sh" />
+            </svg>Kiyim va poyabzal</li>
+          <li><svg class="i">
+              <use href="#so" />
+            </svg>Uy-ro‘zg‘or</li>
+          <li><svg class="i">
+              <use href="#sp" />
+            </svg>Go‘zallik</li>
+          <li><svg class="i">
+              <use href="#ty" />
+            </svg>Bolalar uchun</li>
+          <li><svg class="i">
+              <use href="#ba" />
+            </svg>Sport</li>
+          <li><svg class="i">
+              <use href="#ca" />
+            </svg>Avto</li>
+          <li><svg class="i">
+              <use href="#bk" />
+            </svg>Kitoblar</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section id="qadamlar">
+      <div class="w">
+        <div class="sh">
+          <h2>Do‘kon qanday ochiladi?</h2>
+          <p>To‘rt oddiy qadam — va do‘koningiz tayyor.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><b>1</b>
+            <h3>Ro‘yxatdan o‘ting</h3>
+            <p>Telefon raqam va shaxsiy ma’lumotlaringizni kiriting.</p>
+          </div>
+          <div class="step"><b>2</b>
+            <h3>Do‘kon yarating</h3>
+            <p>Do‘kon nomi, havolasi va faoliyat turini tanlang.</p>
+          </div>
+          <div class="step"><b>3</b>
+            <h3>Mahsulot joylang</h3>
+            <p>Narx va tavsif bilan mahsulotlaringizni qo‘shing.</p>
+          </div>
+          <div class="step"><b>4</b>
+            <h3>Buyurtma oling</h3>
+            <p>Xaridorlar sizni topadi, buyurtmalar panelga tushadi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="mikroqarz">
+      <div class="w">
+        <div class="loan">
+          <div class="ll">
+            <span class="bdg"><svg class="i">
+                <use href="#bn" />
+              </svg>Mikroqarz</span>
+            <h2>Do‘koningizni kengaytiring</h2>
+            <p>Xarid.uz mijozlari o‘z marketplace’i (do‘koni) uchun mikroqarz olishi mumkin.</p>
+            <a class="btn g lg" href="sahifa.html#mikroqarz">Mikroqarz haqida <svg class="i">
+                <use href="#ar" />
+              </svg></a>
+          </div>
+          <div class="lr">
+            <small>Mikroqarz summasi</small>
+            <b>5–20 <span>mln so‘m</span></b>
+            <div class="bar"><i></i></div>
+            <div class="rl"><span>5 mln</span><span>20 mln</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMA ============ -->
+    <section id="forma">
+      <div class="w">
+        <div class="fg">
+          <div class="fl2">
+            <span class="eb">DO‘KON OCHISH</span>
+            <h2>Do‘koningizni <em>hoziroq</em> yarating</h2>
+            <p>Formani to‘ldiring — arizangizni ko‘rib chiqib, siz bilan bog‘lanamiz.</p>
+            <ul class="ck2">
+              <li><svg class="i">
+                  <use href="#ck" />
+                </svg>Do‘kon nomi va havolasini o‘zingiz tanlaysiz</li>
+              <li><svg class="i">
+                  <use href="#ck" />
+                </svg>Mahsulotlarni istalgan vaqtda qo‘shasiz</li>
+              <li><svg class="i">
+                  <use href="#ck" />
+                </svg>Buyurtmalar va to‘lovlar bir panelda</li>
+            </ul>
+            <div class="mini"><svg class="i">
+                <use href="#sd" />
+              </svg><span>Ma’lumotlaringiz faqat do‘koningizni rasmiylashtirish uchun ishlatiladi.</span></div>
+          </div>
+
+          <form class="box" action="#" method="post">
+            <h3>Do‘kon ma’lumotlari</h3>
+            <p class="sub">Barcha maydonlar to‘ldirilishi shart.</p>
+
+            <label class="fld"><svg class="i ic0">
+                <use href="#st" />
+              </svg><input type="text" name="dokon" placeholder=" " required><span>Do‘kon nomi</span></label>
+
+            <label class="fld url"><svg class="i ic0">
+                <use href="#lk" />
+              </svg><input type="text" name="havola" placeholder=" " required><span>Do‘kon havolasi</span><b
+                class="pre">xarid.uz/</b></label>
+
+            <label class="fld sel"><svg class="i ic0">
+                <use href="#gr" />
+              </svg>
+              <select name="kategoriya" required>
+                <option value="" selected disabled>Kategoriyani tanlang</option>
+                <option>Elektronika</option>
+                <option>Kiyim va poyabzal</option>
+                <option>Uy-ro‘zg‘or</option>
+                <option>Go‘zallik</option>
+                <option>Bolalar uchun</option>
+                <option>Sport</option>
+                <option>Avto</option>
+                <option>Kitoblar</option>
+              </select><span>Faoliyat turi</span></label>
+
+            <div class="grp">
+              <small>Sotuvchi turi</small>
+              <input class="sr" type="radio" name="tur" id="r1" checked><input class="sr" type="radio" name="tur"
+                id="r2"><input class="sr" type="radio" name="tur" id="r3">
+              <div class="mo"><label for="r1">Jismoniy shaxs</label><label for="r2">YaTT</label><label
+                  for="r3">MChJ</label></div>
+            </div>
+
+            <div class="row2">
+              <label class="fld"><svg class="i ic0">
+                  <use href="#u" />
+                </svg><input type="text" name="ism" placeholder=" " required><span>Ism</span></label>
+              <label class="fld"><svg class="i ic0">
+                  <use href="#u" />
+                </svg><input type="text" name="familiya" placeholder=" " required><span>Familiya</span></label>
+            </div>
+
+            <label class="fld tel"><svg class="i ic0">
+                <use href="#ph" />
+              </svg><input type="tel" name="tel" placeholder=" " required><span>Telefon raqam</span><b
+                class="pre">+998</b></label>
+
+            <label class="chk"><input type="checkbox" required><span>Men <a href="#">foydalanish shartlari</a> va <a
+                  href="#">maxfiylik siyosati</a> bilan roziman</span></label>
+
+            <button class="btn g lg" type="submit">Do‘kon ochish <svg class="i">
+                <use href="#ar" />
+              </svg></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="faq">
+      <div class="w">
+        <div class="sh">
+          <h2>Ko‘p so‘raladigan savollar</h2>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>Do‘kon ochish uchun nima kerak?</summary>
+            <p>Formani to‘ldirib ariza yuboring: do‘kon nomi, faoliyat turi va aloqa ma’lumotlaringiz kifoya. Arizangiz
+              ko‘rib chiqiladi.</p>
+          </details>
+          <details>
+            <summary>Mahsulotlarni qanday joylayman?</summary>
+            <p>Do‘kon ochilgach, panel orqali mahsulot nomi, narxi va tavsifini kiritib qo‘shasiz.</p>
+          </details>
+          <details>
+            <summary>Buyurtmalarni qanday boshqaraman?</summary>
+            <p>Barcha buyurtmalar do‘kon panelingizda ko‘rinadi — holatini shu yerdan kuzatib borasiz.</p>
+          </details>
+          <details>
+            <summary>Mikroqarz olish mumkinmi?</summary>
+            <p>Ha, Xarid.uz mijozlari o‘z do‘koni uchun 5 mln dan 20 mln so‘mgacha mikroqarz olishi mumkin. Shartlar
+              ariza paytida ko‘rsatiladi.</p>
+          </details>
+          <details>
+            <summary>XARID kartasi nima?</summary>
+            <p>Bu xaridorlar uchun karta: uning egasi marketplace’dagi har bir mahsulotga 3% chegirma oladi.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="fin">
+      <div class="w">
+        <h2>Savdoni bugun <em>boshlang</em></h2>
+        <p>Do‘koningizni oching va Xarid.uz xaridorlariga yeting.</p>
+        <div class="acts"><a class="btn w2 lg" href="#forma">Do‘kon ochish</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="w">
+      <a class="logo" href="index.html"><svg>
+          <use href="#lg" />
+        </svg><span>Xarid<i>.uz</i></span></a>
+      <span>© 2026 Xarid.uz. Barcha huquqlar himoyalangan.</span>
+      <a class="back" href="index.html#dokon"><svg class="i">
+          <use href="#al" />
+        </svg>Bosh sahifa</a>
+    </div>
+  </footer>
+</body>
+
+</html>

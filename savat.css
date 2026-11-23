@@ -1,0 +1,820 @@
+:root {
+  --ink: #0a0a0a;
+  --bg: #f4f4f4;
+  --c: #ffffff;
+  --l: #e5e5e5;
+  --m: #5c5c5c;
+  --tx: #0a0a0a;
+  --g: #c9a45c;
+  --g2: #e6cf9f;
+  --gl: #f7efd8;
+  --hl: #f7d774;
+  --a1: #0fb5a3;
+  --a1l: rgba(15, 181, 163, 0.14);
+  --fn: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #000000;
+    --bg: #0a0a0a;
+    --c: #141414;
+    --l: #272727;
+    --m: #a3a3a3;
+    --tx: #f5f5f5;
+    --gl: rgba(201, 164, 92, 0.16);
+    --hl: rgba(201, 164, 92, 0.45);
+    --a1l: rgba(15, 181, 163, 0.16);
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fn);
+  background: var(--bg);
+  color: var(--tx);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sr-only {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.w {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.i {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+/* Yuqori panel */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--c);
+  border-bottom: 1px solid var(--l);
+  height: 76px;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar .w {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: -0.045em;
+}
+
+.logo svg {
+  width: 38px;
+  height: 38px;
+}
+
+.logo i {
+  font-style: normal;
+  color: var(--g);
+}
+
+.crumbs {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--m);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.crumbs a:hover {
+  color: var(--tx);
+}
+
+.crumbs span {
+  color: var(--tx);
+  font-weight: 700;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--l);
+  background: var(--c);
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.back-btn:hover {
+  border-color: var(--tx);
+  background: var(--bg);
+}
+
+/* Asosiy 3 ustunli grid */
+.prod-page {
+  padding: 36px 0 76px;
+}
+
+.prod-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.05fr 0.9fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* 1-ustun: Galereya */
+.gallery-col {
+  position: sticky;
+  top: 98px;
+}
+
+.main-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.08;
+  border-radius: 26px;
+  overflow: hidden;
+  background: var(--c);
+  border: 1.5px solid var(--l);
+  margin-bottom: 14px;
+}
+
+.disc-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: var(--tx);
+  color: var(--c);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.g-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+#g-1:checked ~ .main-img-box .img-1,
+#g-2:checked ~ .main-img-box .img-2,
+#g-3:checked ~ .main-img-box .img-3,
+#g-4:checked ~ .main-img-box .img-4 {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.thumbs-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.thumb {
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid var(--l);
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: var(--c);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#g-1:checked ~ .thumbs-row label[for="g-1"],
+#g-2:checked ~ .thumbs-row label[for="g-2"],
+#g-3:checked ~ .thumbs-row label[for="g-3"],
+#g-4:checked ~ .thumbs-row label[for="g-4"] {
+  border-color: var(--tx);
+  transform: translateY(-2px);
+}
+
+/* 2-ustun: Mahsulot ma'lumotlari */
+.info-col h1 {
+  font-size: clamp(22px, 2.3vw, 28px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13.5px;
+  margin-bottom: 16px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #f0a92e;
+}
+
+.stars .i {
+  width: 16px;
+  height: 16px;
+}
+
+.rating-row .muted {
+  color: var(--m);
+}
+
+.garantiya-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 13px;
+  border-radius: 10px;
+  background: var(--a1l);
+  color: var(--a1);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+}
+
+.garantiya-pill .i {
+  width: 16px;
+  height: 16px;
+}
+
+.opt-block {
+  margin-bottom: 24px;
+}
+
+.opt-label {
+  font-size: 14px;
+  color: var(--m);
+  margin-bottom: 10px;
+}
+
+.opt-label b {
+  color: var(--tx);
+  font-weight: 800;
+  margin-left: 4px;
+  display: none;
+}
+
+#c-white:checked ~ .opt-label .c-name-white,
+#c-panda:checked ~ .opt-label .c-name-panda,
+#c-cream:checked ~ .opt-label .c-name-cream,
+#c-black:checked ~ .opt-label .c-name-black {
+  display: inline;
+}
+
+.color-swatches {
+  display: flex;
+  gap: 10px;
+}
+
+.swatch {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  border: 2px solid var(--l);
+  padding: 4px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: var(--c);
+}
+
+.swatch span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+#c-white:checked ~ .color-swatches label[for="c-white"],
+#c-panda:checked ~ .color-swatches label[for="c-panda"],
+#c-cream:checked ~ .color-swatches label[for="c-cream"],
+#c-black:checked ~ .color-swatches label[for="c-black"] {
+  border-color: var(--tx);
+  transform: translateY(-2px);
+}
+
+/* O'lchamlar */
+#s-37:checked ~ .opt-label .s-val-37,
+#s-39:checked ~ .opt-label .s-val-39,
+#s-41:checked ~ .opt-label .s-val-41,
+#s-44:checked ~ .opt-label .s-val-44,
+#s-47:checked ~ .opt-label .s-val-47 {
+  display: inline;
+}
+
+.size-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.size-pill {
+  min-width: 50px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1.5px solid var(--l);
+  background: var(--c);
+  font-size: 14px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s ease;
+}
+
+.size-pill:hover:not(.disabled) {
+  border-color: var(--tx);
+}
+
+.size-pill.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+#s-37:checked ~ .size-pills label[for="s-37"],
+#s-39:checked ~ .size-pills label[for="s-39"],
+#s-41:checked ~ .size-pills label[for="s-41"],
+#s-44:checked ~ .size-pills label[for="s-44"],
+#s-47:checked ~ .size-pills label[for="s-47"] {
+  background: var(--tx);
+  color: var(--c);
+  border-color: var(--tx);
+}
+
+/* Yetkazib berish ma'lumotlari bloki */
+.delivery-box {
+  background: var(--c);
+  border: 1.5px solid var(--l);
+  border-radius: 22px;
+  padding: 22px;
+  margin-top: 8px;
+}
+
+.del-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--l);
+  margin-bottom: 16px;
+}
+
+.del-head .i {
+  width: 24px;
+  height: 24px;
+  color: var(--a1);
+}
+
+.del-head strong {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 800;
+}
+
+.del-head small {
+  color: var(--m);
+  font-size: 12.5px;
+}
+
+.del-items {
+  display: grid;
+  gap: 14px;
+}
+
+.del-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.del-ic {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--a1l);
+  color: var(--a1);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.del-ic.gold {
+  background: var(--gl);
+  color: #9a7220;
+}
+
+.del-ic .i {
+  width: 18px;
+  height: 18px;
+}
+
+.del-txt {
+  flex: 1;
+}
+
+.del-txt b {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+.del-txt span {
+  display: block;
+  font-size: 12px;
+  color: var(--m);
+  line-height: 1.35;
+}
+
+.del-free {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--a1);
+  background: var(--a1l);
+  padding: 4px 10px;
+  border-radius: 8px;
+  flex: none;
+}
+
+.del-price,
+.del-tag {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--tx);
+  background: var(--bg);
+  border: 1px solid var(--l);
+  padding: 4px 10px;
+  border-radius: 8px;
+  flex: none;
+}
+
+/* 3-ustun: Narx va xarid qilish kartasi */
+.buy-col {
+  position: sticky;
+  top: 98px;
+}
+
+.buy-card {
+  background: var(--c);
+  border: 1.5px solid var(--l);
+  border-radius: 26px;
+  padding: 28px;
+  box-shadow: 0 28px 56px -38px rgba(0, 0, 0, 0.28);
+}
+
+.price-head {
+  margin-bottom: 20px;
+}
+
+.price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.price-main strong {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.price-main del {
+  font-size: 16px;
+  color: var(--m);
+  font-weight: 600;
+}
+
+.xarid-card-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: var(--gl);
+  border: 1px solid rgba(201, 164, 92, 0.4);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.xarid-card-note .i {
+  width: 17px;
+  height: 17px;
+  color: #9a7220;
+}
+
+.xarid-card-note b {
+  font-weight: 800;
+}
+
+/* Bo'lib to'lash */
+.installment-box {
+  background: var(--bg);
+  border: 1px solid var(--l);
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 20px;
+}
+
+.inst-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.inst-tab {
+  height: 36px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--m);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s ease;
+}
+
+.inst-tab:hover {
+  color: var(--tx);
+}
+
+#i-3:checked ~ .inst-tabs label[for="i-3"],
+#i-6:checked ~ .inst-tabs label[for="i-6"],
+#i-12:checked ~ .inst-tabs label[for="i-12"],
+#i-24:checked ~ .inst-tabs label[for="i-24"] {
+  background: var(--c);
+  color: var(--tx);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inst-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+}
+
+.inst-badge {
+  padding: 5px 11px;
+  border-radius: 9px;
+  background: var(--hl);
+  color: #0a0a0a;
+  font-size: 14.5px;
+  font-weight: 800;
+}
+
+.inst-badge b,
+.inst-per i {
+  display: none;
+  font-style: normal;
+}
+
+.inst-per {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--m);
+}
+
+#i-3:checked ~ .inst-result .iv-3,
+#i-6:checked ~ .inst-result .iv-6,
+#i-12:checked ~ .inst-result .iv-12,
+#i-24:checked ~ .inst-result .iv-24,
+#i-3:checked ~ .inst-result .ip-3,
+#i-6:checked ~ .inst-result .ip-6,
+#i-12:checked ~ .inst-result .ip-12,
+#i-24:checked ~ .inst-result .ip-24 {
+  display: inline;
+}
+
+/* Tugmalar */
+.action-buttons {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.top-actions {
+  display: grid;
+  grid-template-columns: 1fr 52px;
+  gap: 10px;
+}
+
+.btn-oneclick {
+  height: 52px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--l);
+  font-size: 14.5px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  transition: 0.2s ease;
+}
+
+.btn-oneclick:hover {
+  border-color: var(--tx);
+}
+
+.btn-fav {
+  height: 52px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--l);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-fav:hover {
+  border-color: var(--tx);
+}
+
+#fav-toggle:checked ~ .top-actions .btn-fav {
+  background: #ff5a45;
+  border-color: #ff5a45;
+  color: #fff;
+}
+
+#fav-toggle:checked ~ .top-actions .btn-fav .i {
+  fill: currentColor;
+}
+
+.btn-cart {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px 18px;
+  border-radius: 16px;
+  background: var(--tx);
+  color: var(--c);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.25s ease;
+}
+
+.btn-cart:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.cart-default b {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 800;
+}
+
+.cart-default small {
+  display: block;
+  font-size: 12px;
+  opacity: 0.78;
+}
+
+.cart-added {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 15.5px;
+}
+
+#cart-toggle:checked ~ .btn-cart {
+  background: var(--a1);
+  color: #fff;
+}
+
+#cart-toggle:checked ~ .btn-cart .cart-default {
+  display: none;
+}
+
+#cart-toggle:checked ~ .btn-cart .cart-added {
+  display: inline-flex;
+}
+
+/* Qoldiq va statistika */
+.stock-meta {
+  display: grid;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--l);
+}
+
+.sm-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.sm-ic {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.sm-ic .i {
+  width: 16px;
+  height: 16px;
+}
+
+.sm-item.green .sm-ic {
+  background: var(--a1l);
+  color: var(--a1);
+}
+
+/* Responsiv moslashuv */
+@media (max-width: 1080px) {
+  .prod-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .buy-col {
+    grid-column: 1 / -1;
+    position: static;
+  }
+  .gallery-col {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .crumbs {
+    display: none;
+  }
+  .prod-grid {
+    grid-template-columns: 1fr;
+  }
+  .w {
+    padding: 0 18px;
+  }
+  .buy-card {
+    padding: 22px 18px;
+  }
+}

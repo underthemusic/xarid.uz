@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sotuvchilar uchun Mikroqarz — Xarid.uz</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mikro.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#18d9c2"/><stop offset="1" stop-color="#0a6fa8"/></linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#f0a92e"/></linearGradient>
+    <symbol id="lg" viewBox="0 0 48 48">
+      <rect width="48" height="48" rx="14" fill="url(#a)"/>
+      <path d="M17 19v-3a7 7 0 0 1 14 0v3" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      <path d="M12.5 19h23l-1.8 17.2a3.5 3.5 0 0 1-3.5 3.1H17.8a3.5 3.5 0 0 1-3.5-3.1z" fill="#fff"/>
+      <path d="M19.5 24.5l9 10M28.5 24.5l-9 10" stroke="url(#b)" stroke-width="3.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="bk" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="ck" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  </defs>
+</svg>
+
+<header class="top-bar">
+  <div class="w">
+    <a class="logo" href="index.html"><svg><use href="#lg"/></svg><span>Xarid<i>.uz</i></span></a>
+    <a class="back-btn" href="index.html#mikroqarz"><svg class="i"><use href="#bk"/></svg> Bosh sahifaga</a>
+  </div>
+</header>
+
+<main class="loan-page">
+  <div class="w">
+    <input type="radio" name="loan-amount" id="amt-30" class="sr-only">
+    <input type="radio" name="loan-amount" id="amt-50" class="sr-only" checked>
+    <input type="radio" name="loan-amount" id="amt-70" class="sr-only">
+    <input type="radio" name="loan-amount" id="amt-90" class="sr-only">
+
+    <div class="loan-grid">
+      <div class="loan-info">
+        <span class="badge"><i></i> SOTUVCHILAR UCHUN MIKROQARZ</span>
+        <h1>Do‘koningizni <em>20 mln so‘mgacha</em> kengaytiring</h1>
+        <p class="subtitle">Xarid.uz sotuvchilari uchun aylanma mablag‘ va tovar zaxirasini oshirishga mo‘ljallangan tezkor onlayn moliyaviy ko‘mak.</p>
+
+        <div class="calc-box">
+          <div class="calc-top">
+            <span class="calc-label">Tanlangan summa</span>
+            <div class="calc-amount-display">
+              <span class="amt-val-30">5 000 000</span>
+              <span class="amt-val-50">10 000 000</span>
+              <span class="amt-val-70">15 000 000</span>
+              <span class="amt-val-90">20 000 000</span>
+              <small>so‘m</small>
+            </div>
+          </div>
+
+          <div class="progress-track"><div class="progress-fill"></div></div>
+
+          <div class="amount-pills">
+            <label for="amt-30" class="amount-pill">5 mln</label>
+            <label for="amt-50" class="amount-pill">10 mln</label>
+            <label for="amt-70" class="amount-pill">15 mln</label>
+            <label for="amt-90" class="amount-pill">20 mln</label>
+          </div>
+
+          <div class="calc-meta">
+            <div class="meta-item"><small>Muddati</small><b>3 – 12 oy</b></div>
+            <div class="meta-item"><small>Ko‘rib chiqish</small><b>1 ish kuni</b></div>
+            <div class="meta-item"><small>Garov talabi</small><b>Garovsiz</b></div>
+          </div>
+        </div>
+
+        <div class="steps-title">Mablag‘ olish bosqichlari</div>
+        <div class="steps-grid">
+          <div class="step-card"><div class="step-num">01</div><div><h3>Do‘kon oching</h3><p>Xarid.uz platformasida sotuvchi sifatida faoliyat boshlang.</p></div></div>
+          <div class="step-card"><div class="step-num">02</div><div><h3>Ariza yuboring</h3><p>Kerakli summa va do‘kon ma’lumotlarini onlayn to‘ldiring.</p></div></div>
+          <div class="step-card"><div class="step-num">03</div><div><h3>Ko‘rib chiqish</h3><p>Savdo aylanmangiz asosida 24 soat ichida qaror qabul qilinadi.</p></div></div>
+          <div class="step-card"><div class="step-num">04</div><div><h3>Mablag‘ni oling</h3><p>Tasdiqlangan mablag‘ hisob raqamingizga o‘tkazib beriladi.</p></div></div>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <input type="checkbox" id="loan-submit-toggle" class="sr-only">
+        <div class="form-content">
+          <div class="form-head">
+            <h2>Mikroqarzga ariza qoldiring</h2>
+            <p>Barcha maydonlarni to‘ldiring, mutaxassisimiz tez orada bog‘lanadi.</p>
+          </div>
+
+          <form action="#" method="POST">
+            <div class="form-row">
+              <div class="input-group"><label for="ism">Ism</label><input type="text"></div>
+              <div class="input-group"><label for="familiya">Familiya</label><input type="text"></div>
+            </div>
+
+            <div class="input-group">
+              <label for="telefon">Telefon raqami</label>
+              <div class="phone-wrap"><span class="prefix">+998</span><input type="tel" ></div>
+            </div>
+
+            <div class="input-group">
+              <label for="dokon">Do‘kon nomi (Xarid.uz)</label>
+              <input type="text" id="dokon" name="dokon" placeholder="Masalan: TechStore UZ" required>
+            </div>
+
+            <div class="form-row">
+              <div class="input-group">
+                <label for="summa">Kerakli summa</label>
+                <select>
+                  <option value="5">5 000 000 so‘m</option>
+                  <option value="10" selected>10 000 000 so‘m</option>
+                  <option value="15">15 000 000 so‘m</option>
+                  <option value="20">20 000 000 so‘m</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label for="maqsad">Maqsad</label>
+                <select id="maqsad" name="maqsad" required>
+                  <option value="tovar">Tovar zaxirasini oshirish</option>
+                  <option value="aylanma">Aylanma mablag‘</option>
+                  <option value="reklama">Marketing va targ‘ibot</option>
+                  <option value="uskuna">Ombor va jihozlar</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="loan-submit-toggle" class="btn-submit" role="button" tabindex="0">Ariza yuborish <svg class="i"><use href="#ar"/></svg></label>
+            <p class="legal">Tugmani bosish orqali siz shaxsiy ma’lumotlarni ko‘rib chiqish shartlariga rozilik bildirasiz.</p>
+          </form>
+        </div>
+
+        <div class="success-box">
+          <div class="s-icon"><svg class="i"><use href="#ck"/></svg></div>
+          <h3>Arizangiz muvaffaqiyatli qabul qilindi!</h3>
+          <p>Xarid.uz moliyaviy bo‘limi mutaxassisi arizangizni ko‘rib chiqib, 24 soat ichida siz bilan bog‘lanadi.</p>
+          <label for="loan-submit-toggle" class="btn-reset" role="button" tabindex="0">Yana ariza qoldirish</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
